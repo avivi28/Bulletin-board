@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='index.css')}}"
+		/>
+		<title>Bulletin-board</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, minimum-scale=1"
+		/>
+	</head>
+	<body>
+		<h1>發表一篇圖文ʕ•ᴥ•ʔ</h1>
+		<div>文字內容<input type="text" placeholder="選擇一張圖片後送出" /></div>
+		<div>圖片檔案<input type="file" accept="image/png, image/jpeg" /></div>
+		<input type="submit" value="送出" />
+		<hr />
+		<script src="/static/layout.js"></script>
+	</body>
+</html>
