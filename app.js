@@ -17,15 +17,6 @@ app.get('/s3Url', async (req, res) => {
 	res.send({ url });
 });
 
-// app.post('/images', async (req, res) => {
-// 	const file = req.file;
-// 	console.log(file);
-// 	const result = await uploadFile(file);
-// 	console.log(result);
-// 	const description = req.body.description;
-// 	res.send('successful post to S3!!');
-// });
-
 app.listen(5050, function () {
 	//port 5050
 	console.log('website is located in http://localhost:5050/');
