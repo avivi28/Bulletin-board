@@ -1,7 +1,18 @@
 const imageForm = document.querySelector('#images_form');
 const imageInput = document.querySelector('#image');
+const loader = document.getElementById('loader');
+
+function showLoading() {
+	loader.style.display = 'block';
+}
+
+function hideLoading() {
+	loader.style.display = 'none';
+}
 
 imageForm.addEventListener('submit', async (event) => {
+	showLoading();
+
 	event.preventDefault();
 	const form = new FormData(imageForm);
 	const commentInput = new URLSearchParams(form);
@@ -29,6 +40,8 @@ imageForm.addEventListener('submit', async (event) => {
 			'Content-Type': 'application/json;charset=utf-8',
 		},
 		body: JSON.stringify(bodyData),
+	}).then((res) => {
+		hideLoading();
 	});
 
 	const imageUrl = url.split('?')[0];
