@@ -25,7 +25,7 @@ app.post('/comment', async (req, res) => {
 	res.send('successfully inserted the comment data into DB!!');
 }); //insert comment into RDS
 
-app.listen(5050, function () {
+app.listen(5050, '0.0.0.0', function () {
 	//port 5050
 	console.log('website is located in http://localhost:5050/');
 });
