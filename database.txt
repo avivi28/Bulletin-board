@@ -1,0 +1,4 @@
+CREATE TABLE comment (
+comment_id bigint auto_increment primary key,
+comment text not null
+);
