@@ -31,8 +31,16 @@ input {
 .uploadedimage_container {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .uploadedimage_container > img {
 	width: 300px;
+}
+.comment {
+	color: #e91e63;
+	font-family: monospace;
+	font-weight: 800;
+	font-size: 18px;
 }
