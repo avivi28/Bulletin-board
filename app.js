@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); //產生express application物件
-const { generateUploadURL } = require('./s3');
-const { insertComment } = require('./queryDB');
+const { generateUploadURL } = require('./model/s3');
+const { insertComment } = require('./model/queryDB');
 
 app.use(express.static('public')); //make css & js file accessible
 app.use(express.urlencoded({ extended: true })); //for getting the data sent from client
