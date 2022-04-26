@@ -32,6 +32,8 @@ imageForm.addEventListener('submit', async (event) => {
 			'Content-Type': 'multipart/form-data',
 		},
 		body: file,
+	}).then((res) => {
+		hideLoading();
 	});
 
 	await fetch('/comment', {
@@ -40,8 +42,6 @@ imageForm.addEventListener('submit', async (event) => {
 			'Content-Type': 'application/json;charset=utf-8',
 		},
 		body: JSON.stringify(bodyData),
-	}).then((res) => {
-		hideLoading();
 	});
 
 	const imageUrl = url.split('?')[0];
@@ -54,14 +54,13 @@ imageForm.addEventListener('submit', async (event) => {
 	comment.textContent = commentContent;
 	comment.className = 'comment';
 
-	const underline = document.createElement('hr');
-
 	const img = document.createElement('img');
 	const imgContainer = document.querySelector('.uploadedimage_container');
 	img.src = cloudFrontUrl;
 	img.className = 'uploadedimage';
 
-	imgContainer.appendChild(comment);
-	imgContainer.appendChild(img);
-	imgContainer.appendChild(underline);
+	// imgContainer.appendChild(comment);
+	// imgContainer.appendChild(img);
+	imgContainer.insertBefore(img, imgContainer.firstChild);
+	imgContainer.insertBefore(comment, imgContainer.firstChild);
 });
