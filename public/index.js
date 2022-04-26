@@ -24,7 +24,8 @@ imageForm.addEventListener('submit', async (event) => {
 
 	//post request to my server to store any extra data
 	const img = document.createElement('img');
+	const imgContainer = document.querySelector('.uploadedimage_container');
 	img.src = cloudFrontUrl;
-	img.style = 'width:300px';
-	document.body.appendChild(img);
+	img.className = 'uploadedimage';
+	imgContainer.appendChild(img);
 });

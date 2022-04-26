@@ -7,24 +7,36 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, minimum-scale=1"
 		/>
+		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body>
-		<h1>發表一篇圖文ʕ•ᴥ•ʔ</h1>
-		<form id="images_form">
-			<div>
-				文字內容<input
-					type="text"
-					name="comment"
-					id="comment"
-					placeholder="選擇一張圖片後送出"
-				/>
+		<div class="backgroundImg_container">
+			<img src="/background.png" />
+			<div class="comment_container">
+				<h1>發表一篇圖文ʕ•ᴥ•ʔ</h1>
+				<form id="images_form">
+					<div>
+						文字內容<input
+							type="text"
+							name="comment"
+							id="comment"
+							placeholder="選擇一張圖片後送出"
+						/>
+					</div>
+					<div>
+						圖片檔案<input
+							type="file"
+							name="image"
+							id="image"
+							accept="image/*"
+						/>
+					</div>
+					<input type="submit" id="submit" value="送出" />
+				</form>
 			</div>
-			<div>
-				圖片檔案<input type="file" name="image" id="image" accept="image/*" />
-			</div>
-			<input type="submit" value="送出" />
-		</form>
+		</div>
 		<hr />
+		<div class="uploadedimage_container"></div>
 		<script src="/index.js"></script>
 	</body>
 </html>

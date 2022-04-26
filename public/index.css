@@ -1,0 +1,38 @@
+.backgroundImg_container {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.comment_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 166px;
+}
+.backgroundImg_container > img {
+	width: 350px;
+}
+body {
+	background-color: #e8ebba40;
+}
+input {
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+#submit {
+	position: absolute;
+	right: 0;
+	top: 157px;
+	width: 50px;
+}
+.uploadedimage_container {
+	display: flex;
+	justify-content: center;
+}
+
+.uploadedimage_container > img {
+	width: 300px;
+}
