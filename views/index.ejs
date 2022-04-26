@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static', filename='index.css')}}"
-		/>
 		<title>Bulletin-board</title>
 		<meta charset="utf-8" />
 		<meta
@@ -14,10 +10,21 @@
 	</head>
 	<body>
 		<h1>發表一篇圖文ʕ•ᴥ•ʔ</h1>
-		<div>文字內容<input type="text" placeholder="選擇一張圖片後送出" /></div>
-		<div>圖片檔案<input type="file" accept="image/png, image/jpeg" /></div>
-		<input type="submit" value="送出" />
+		<form id="images_form">
+			<div>
+				文字內容<input
+					type="text"
+					name="comment"
+					id="comment"
+					placeholder="選擇一張圖片後送出"
+				/>
+			</div>
+			<div>
+				圖片檔案<input type="file" name="image" id="image" accept="image/*" />
+			</div>
+			<input type="submit" value="送出" />
+		</form>
 		<hr />
-		<script src="/static/layout.js"></script>
+		<script src="/index.js"></script>
 	</body>
 </html>
