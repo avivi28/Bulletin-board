@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express(); //產生express application物件
+
+const port = process.env.PORT;
+
 const { generateUploadURL } = require('./model/s3');
 const { insertComment } = require('./model/queryDB');
 
@@ -25,7 +28,6 @@ app.post('/comment', async (req, res) => {
 	res.send('successfully inserted the comment data into DB!!');
 }); //insert comment into RDS
 
-app.listen(5050, '0.0.0.0', function () {
-	//port 5050
-	console.log('website is located in http://localhost:5050/');
+app.listen(port, '0.0.0.0', function () {
+	console.log('website is located in http://localhost:' + port + '/');
 });

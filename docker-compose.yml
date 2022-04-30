@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  node-app1:
+    image: avivi28/comment_board
+    environment:
+      - PORT=1111
+    networks:
+      - bear-net
+  node-app2:
+    image: avivi28/comment_board
+    environment:
+      - PORT=2222
+    networks:
+      - bear-net
+  nginx_load_balancer:
+    image: nginx
+    ports:
+      - '80:80'
+    volumes:
+      - './nginx/default.conf:/etc/nginx/nginx.conf'
+    networks:
+      - bear-net
+
+networks:
+  bear-net:
+    external: true
